@@ -7,7 +7,6 @@ import (
 	"syscall"
 
 	"github.com/gin-gonic/gin"
-	"gitlab.ritsec.cloud/competitions/ists-2023/store/bot"
 	_ "gitlab.ritsec.cloud/competitions/ists-2023/store/config"
 	"gitlab.ritsec.cloud/competitions/ists-2023/store/data"
 	"gitlab.ritsec.cloud/competitions/ists-2023/store/requests"
@@ -37,12 +36,12 @@ func init() {
 
 func main() {
 	requests.LoadRequests(Router)
-	bot.Init()
+
 
 	Router.Run(":80")
 }
 
 func cleanup() {
 	data.Close()
-	bot.Close()
+	
 }
