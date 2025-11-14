@@ -1,0 +1,15 @@
+{{ define "header"}}
+{{ template "top" . }}
+{{ if .navbar }}
+    {{ template "navbar" . }}
+{{ end }}
+<div class="container">
+    <div class="title">
+        {{ .title }}
+    </div>
+{{ end }}
+
+{{ define "footer" }}
+</div>
+{{ template "bottom" . }}
+{{ end }}

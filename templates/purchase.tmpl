@@ -1,0 +1,24 @@
+{{ template "header" . }}
+<div class="item-container">
+    <div class="purchase-container">
+        <div class="purchase-image-container">
+            <img class="purchase-image" src="{{ .item.Image }}">
+        </div>
+        <div class="purchase-info">
+            <div class="purchase-card">
+                <div class="purchase-name">
+                    {{ .item.Name }}
+                </div>
+                <div class="purchase-description-container">
+                    {{ .item.Description }}
+                </div>
+                <form action="/purchase" id="purchase" method="post">
+                    <textarea class="purchase-textarea" name="instructions" id="instructions" placeholder="Item Instructions (if applicable)" rows="5"></textarea>
+                    <input type="hidden" name="item" id="item" value="{{ .item.Name }}">
+                </form>
+            </div>
+        </div>        
+    </div>
+    <button class="purchase-button" type="submit"  form="purchase"> {{ .item.Price }} POINTS</button>
+</div>
+{{ template "footer" . }}

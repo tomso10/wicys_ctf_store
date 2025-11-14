@@ -1,0 +1,751 @@
+:root {
+    /* MAIN CONTAINER */
+    --main-container-width: 90%;
+    --font-family: 'Techno', serif;
+    --font-size: 2rem;
+    --font-color: #4AF626;
+
+    /* COLORS */
+    --color-primary: #36454F;
+    --color-secondary: #000000;
+    --color-tertiary: #A9A9A9;
+    --color-accent: #000000;
+
+    /* ERROR */
+    --error-color-primary: #ff0000; /* #FFCCD5; */
+    --error-color-secondary: #000000; /*#FF4D6D;*/
+    --error-color-accent: #000000; /*#800F2F*/
+    --error-container-padding: 10px;
+    --error-container-margin-bottom: 10px;
+
+    /* INFO */
+    --info-color-primary: #000000;/*#FFEFC9;*/
+    --info-color-secondary: #000000/*#2C0000*/;
+    --info-color-accent: #A9A9A9 /*#713A24*/;
+    --info-container-padding: 10px;
+    --info-container-margin-bottom: 30px;
+    --info-container-side-margin: 20%;
+
+    /* NAVBAR */
+    --navbar-primary: var(--color-accent);
+    --navbar-secondary: var(--color-tertiary);
+    --navbar-accent: var(--color-accent);
+    --navbar-font-family: var(--font-family);
+    --navbar-font-size: 2rem;
+    --navbar-font-color: var(--font-color);
+    --navbar-margin: 10px 25px;
+    --navbar-section-gap: 20px;
+
+    /* TITLE */
+    --title-padding: 30px 0px;
+    --title-font-family: 'Techno', sans-serif;
+    --title-font-size: 8rem;
+    --title-font-color: var(--font-color);
+
+    /* TOKEN */
+    --token-container-margin-bottom: 30px;
+    --token-input-font-family: var(--login-input-font-family);
+    --token-input-font-size: var(--login-input-font-size);
+    --token-input-font-color: var(--login-input-font-color);
+    --token-input-color: var(--login-input-color);
+    --token-border: var(--login-border);
+    --token-input-width: 40%;
+
+    /* CARD */
+    --card-color-primary: var(--color-accent);
+    --card-color-secondary: var(--font-color);
+    --card-color-tertiary: #000000/*#2C0000*/;
+    --card-color-accent: #000000/*#85533C*/;
+
+     --card-gap: 60px;
+    --card-margin-right: 30px;
+    --card-width: 350px;
+    --card-padding: 25px;
+
+    --card-image-max-height: var(--card-width);
+    --card-font-color: var(--font-color);
+    --card-title-font-family: var(--font-family);
+    --card-title-font-size: 35pt;
+    --card-title-image-gap: 10px;
+    --card-image-description-gap: 10px;
+    --card-description-font-family: var(--font-family);
+    --card-description-font-size: 24px;
+    --card-description-button-gap: 10px;
+    --card-button-width: 100%;
+    --card-button-background-color: var(--card-color-secondary);
+    --card-button-color-hover: var(--card-color-tertiary);
+    --card-button-color-active: var(--card-color-primary);
+    --card-button-font-color: var(--color-accent);
+    --card-button-font-family: var(--font-family);
+    --card-button-font-size: var(--font-size);
+    --item-button-padding: 10px;
+
+    /* LOGIN */
+    --login-width: 500px;
+    --login-label-font-family: var(--font-family);
+    --login-label-font-size: var(--font-size);
+    --login-label-font-color: var(--font-color);
+    --login-input-font-family: 'Techno_Big', serif;
+    --login-input-font-size: 2.5rem;
+    --login-input-font-color: var(--color-accent);
+    --login-input-color: var(--font-color);
+    --login-input-label-gap: 20px;
+    --login-label-input-gap: 5px;
+    --login-password-icon-gap: 5px;
+    --login-border: 0.2rem solid var(--color-accent);
+
+    /* STATUS */
+    --status-container-width: 80%;
+    --status-code-font-size: 14rem;
+    --status-code-font-family: var(--font-family);
+    --status-code-font-color: var(--font-color);
+    --status-description-font-size: 5rem;
+    --status-description-font-family: var(--font-family);
+    --status-description-font-color: var(--font-color);
+
+    /* ADMIN */
+    --account-item-card-width: 200px;
+    --account-item-card-outline: var(--font-color) solid 2px;
+    --account-item-card-background: var(--color-accent);
+    --account-item-card-font-color: var(--font-color);
+    --account-item-card-font-family: var(--font-family);
+    --account-item-card-username-font-size: 2rem;
+    --function-item-card-width: 300px;
+    --function-item-card-outline: var(--font-color) solid 2px;
+    --function-item-card-background: var(--color-accent);
+    --function-item-card-font-color: var(--font-color);
+    --function-item-card-font-family: var(--font-family);
+    --function-item-card-name-font-size: 1.7rem;
+    --account-item-card-team-font-size: 1rem;
+    --account-item-card-balance-font-size: 4rem;
+    --account-item-card-currency-font-size: 1rem;
+    --account-item-container-padding: 10px;
+    --account-item-card-gap: 20px;
+    --account-item-container-border: 6px solid var(--font-color);
+    --account-item-card-selected-background: var(--color-primary);
+    --account-item-card-selected-outline: var(--font-color) solid 2px;
+    --account-input-center-spacing: 20px;
+
+    /* PURCHASE TABLE */
+    --purchase-table-margin-top: 50px;
+    --purchase-table-margin-bottom: 200px;
+    --purchase-table-heading-background-color: var(--color-accent);
+    --purchase-table-heading-font-color: var(--font-color);
+    --purchase-table-row-even-background-color: var(--color-secondary);
+    --purchase-table-row-even-font-color: var(--font-color);
+    --purchase-table-row-odd-background-color: var(--color-accent);
+    --purchase-table-row-odd-font-color: var(--font-color);
+    --purchase-table-item-padding: 10px;
+    --purchase-table-border: 2px solid var(--font-color);
+}
+
+@font-face {
+    font-family: 'Techno';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../fonts/techno.ttf')
+}
+
+@font-face {
+    font-family: 'Techno';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../fonts/techno.ttf')
+}
+
+@font-face {
+    font-family: 'Techno_Big';
+    font-style: normal;
+    font-weight: 800;
+    font-display: swap;
+    src: url('../fonts/techno.ttf')
+}
+
+* {
+    font-family: 'Techno';
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+a:hover {
+    color: var(--color-primary);
+}
+
+li {
+    list-style-type: none;
+}
+
+body {
+    margin: 0px;
+    background-color: var(--color-secondary);
+    color: var(--color-accent);
+    margin-bottom: 200px;
+}
+
+.body-container {
+    width: 100%;
+}
+
+.container {
+    width: var(--main-container-width);
+    margin: auto;
+}
+
+.navbar-container {
+    width: 100%;
+    overflow: hidden;
+    background: var(--navbar-primary);
+    color: var(--navbar-accent);
+    box-shadow: 0 5px 53px rgba(0, 0, 0, 0.2);
+}
+
+.navbar {
+    margin: var(--navbar-margin);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--navbar-section-gap);
+    font-family: var(--navbar-font-family);
+    font-size: var(--navbar-font-size);
+    color: var(--navbar-font-color);
+}
+
+.hidden {
+    display: none;
+}
+
+.navbar-left {
+    float: left;
+    width: 33%;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.navbar-center {
+    float: left;
+    width: 34%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+
+}
+
+.navbar-right {
+    float: left;
+    width: 33%;
+    display: flex;
+    flex-flow: row-reverse nowrap;
+}
+
+.title {
+    font-family: var(--title-font-family);
+    font-size: var(--title-font-size);
+    text-align: center;
+    color: var(--title-font-color);
+    padding: var(--title-padding);
+}
+
+.sticky {
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+.item-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    row-gap: var(--card-gap);
+}
+
+.item-card {
+    background-color: var(--card-color-primary);
+    width: var(--card-width);
+    padding: var(--card-padding);
+    color: var(--card-font-color);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    margin-right: var(--card-margin-right);
+}
+
+.item-name {
+    text-align: center;
+    font-family: var(--card-title-font-family);
+    font-size: var(--card-title-font-size);
+    color: var(--card-title-font-color);
+    padding-bottom: var(--card-title-image-gap);
+}
+
+.item-image-container {
+    text-align: center;
+    padding-bottom: var(--card-image-description-gap);
+}
+
+.item-image {
+    vertical-align: middle;
+    max-width: var(--card-width);
+    max-height: var(--card-image-max-height);
+}
+
+.item-description-container {
+    padding-bottom: var(--card-description-button-gap);
+    font-family: var(--card-description-font-family);
+    font-size: var(--card-description-font-size);
+}
+
+.item-button-container {
+    text-align: center;
+    bottom: 0px;
+}
+
+.item-button {
+    padding: var(--item-button-padding);
+    background-color: var(--card-button-background-color);
+    font-family: var(--card-button-font-family);
+    font-size: var(--card-button-font-size);
+    color: var(--card-button-font-color);
+    width: var(--card-button-width);
+    text-align: center;
+    border: solid 2px var(--card-button-background-color);
+}
+
+.item-button:hover {
+    background-color: var(--card-button-color-hover);
+    color: var(--card-button-background-color);
+}
+
+.item-button:active {
+    background-color: var(--card-button-color-active)
+}
+
+.login-container {
+    width: var(--login-width);
+    margin: auto;
+}
+
+.login-form {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.login-item-container {
+    margin-bottom: var(--login-input-label-gap);
+    box-sizing: border-box;
+}
+
+.login-item-container label {
+    display: block;
+    text-align: center;
+    font-family: var(--login-label-font-family);
+    font-size: var(--login-label-font-size);
+    color: var(--login-label-font-color);
+    margin-bottom: var(--login-label-input-gap);
+}
+
+.login-input-container {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    position: relative;
+}
+
+.login-input-container input {
+    font-family: var(--login-input-font-family);
+    font-size: var(--login-input-font-size);
+    color: var(--login-input-font-color);
+    background-color: var(--login-input-color);
+    resize: none;
+    outline: none;
+    text-decoration: none !important;
+    flex-grow: 1;
+    min-width: 50%;
+    border: var(--login-border);
+}
+
+.login-icon {
+    font-size: var(--login-input-font-size);
+    color: var(--login-label-font-color);
+    margin-left: var(--login-password-icon-gap);
+}
+
+.login-icon-container {
+    position: absolute;
+    right: calc(var(--login-input-font-size) * -1.50);
+    width: calc(var(--login-input-font-size) * 1.50);
+    display: flex;
+    justify-content: center;
+}
+
+.login-form-button {
+    font-family: var(--login-input-font-family);
+    font-size: var(--login-input-font-size);
+    color: var(--login-input-color);
+    background-color: var(--login-input-font-color);
+    resize: none;
+    outline: none;
+    text-decoration: none !important;
+    flex-grow: 1;
+    width: 50%;
+    border: solid 2px var(--login-input-color);
+    margin-top: var(--login-input-label-gap);
+    align-self: center;
+}
+
+.login-form-button:hover {
+    color: var(--login-input-font-color);
+    background-color: var(--login-input-color);
+    border: var(--login-border);
+}
+
+.error-container {
+    background-color: var(--error-color-primary);
+    outline: var(--error-color-secondary) solid 2px;
+    color: var(--error-color-accent);
+    text-align: center;
+    padding: var(--error-container-padding);
+    margin-bottom: var(--error-container-margin-bottom);
+}
+
+.info-container {
+    background-color: var(--info-color-primary);
+    outline: var(--info-color-secondary) solid 2px;
+    color: var(--info-color-accent);
+    text-align: center;
+    padding: var(--info-container-padding);
+    margin-bottom: var(--info-container-margin-bottom);
+    margin-left: var(--info-container-side-margin);
+    margin-right: var(--info-container-side-margin);
+}
+
+.status-container {
+    width: var(--status-container-width);
+    margin: auto;
+    text-align: center;
+}
+
+.status-code {
+    font-family: var(--status-code-font-family);
+    font-size: var(--status-code-font-size);
+    color: var(--status-code-font-color);
+}
+
+.status-description {
+    font-family: var(--status-description-font-family);
+    font-size: var(--status-description-font-size);
+    color: var(--status-description-font-color);
+}
+
+.accounts-container {
+    display: flex;
+    justify-content: center;
+}
+
+.account-item-container {
+    display: flex;
+    flex-flow: row nowrap;
+    overflow: auto;
+    padding: var(--account-item-container-padding);
+    border-left: var(--account-item-container-border);
+    border-right: var(--account-item-container-border);
+    scrollbar-color: var(--font-color) var(--font-color);
+}
+
+.account-item-card {
+    width: var(--account-item-card-width);
+    outline: var(--account-item-card-outline);
+    background: var(--account-item-card-background);
+    color: var(--account-item-card-font-color);
+    font-family: var(--account-item-card-font-family);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+
+.function-item-card {
+    width: var(--function-item-card-width);
+    outline: var(--function-item-card-outline);
+    background: var(--function-item-card-background);
+    color: var(--function-item-card-font-color);
+    font-family: var(--function-item-card-font-family);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+
+.function-item-card:hover {
+    outline: var(--account-item-card-selected-outline) !important;
+    background: var(--account-item-card-selected-background) !important;
+}
+
+.account-item-card:hover {
+    outline: var(--account-item-card-selected-outline) !important;
+    background: var(--account-item-card-selected-background) !important;
+}
+
+.account-item-card-selected {
+    outline: var(--account-item-card-selected-outline) !important;
+    background: var(--account-item-card-selected-background) !important;
+}
+
+
+.account-item-card-container:not(:last-child) {
+    margin-right: var(--account-item-card-gap);
+}
+
+.account-item-card-username {
+    display: flex;
+    justify-content: center;
+    font-size: var(--account-item-card-username-font-size);
+}
+
+.function-item-card-name {
+    display: flex;
+    justify-content: center;
+    font-size: var(--function-item-card-name-font-size);
+}
+
+.account-item-card-team {
+    display: flex;
+    justify-content: center;
+    font-size: var(--account-item-card-team-font-size);
+}
+
+.account-item-card-balance {
+    display: flex;
+    justify-content: center;
+    font-size: var(--account-item-card-balance-font-size);
+}
+
+.account-item-card-currency {
+    display: flex;
+    justify-content: center;
+    font-size: var(--account-item-card-currency-font-size);
+}
+
+.account-item-card * {
+    pointer-events: none;
+}
+
+.function-item-card * {
+    pointer-events: none;
+}
+
+.account-input-fields {
+    display: flex;
+    justify-content: center;
+}
+
+.account-input-text-box {
+    flex: 1;
+    margin-right: var(--account-input-center-spacing);
+    display: flex;
+    justify-content: right;
+}
+
+.account-input-submit {
+    flex: 1;
+    margin-left: var(--account-input-center-spacing);
+    display: flex;
+    justify-content: left;
+}
+
+.form-button {
+    width: var(--function-item-card-width);
+    background: var(--function-item-card-background);
+    color: var(--function-item-card-font-color);
+    font-family: var(--function-item-card-font-family);
+    font-size: 1.5rem;
+    border: solid 2px var(--card-button-background-color);
+}
+
+.form-button:hover {
+    background: var(--account-item-card-selected-background) !important;
+}
+
+.account-input-container input {
+    width: var(--function-item-card-width);
+    font-family: var(--login-input-font-family);
+    font-size: var(--login-input-font-size);
+    color: var(--login-input-font-color);
+    background-color: var(--login-input-color);
+    resize: none;
+    outline: none;
+    text-decoration: none !important;
+    border: var(--login-border);
+}
+
+fieldset {
+    border: 0;
+    padding: 0.01em 0 0 0;
+    margin: 0;
+    min-width: 0;
+}
+
+body:not(:-moz-handler-blocked) fieldset {
+    display: table-cell;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.purchase-container {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.purchase-image-container {
+    padding: var(--card-padding);
+    flex: 1;
+    display: flex;
+    justify-content: right;
+    max-height: var(--card-width);
+}
+
+.purchase-info {
+    padding: var(--card-padding);
+    flex: 1;
+    display: flex;
+}
+
+.center {
+    margin: auto;
+}
+
+.purchase-card {
+    background-color: var(--card-color-primary);
+    color: var(--card-font-color);
+    width: calc(var(--card-width) - 2 * var(--card-padding));
+    padding: var(--card-padding);
+    color: var(--card-font-color);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+}
+
+.purchase-name {
+    text-align: center;
+    font-family: var(--card-title-font-family);
+    font-size: var(--card-title-font-size);
+    color: var(--card-title-font-color);
+    padding-bottom: var(--card-title-image-gap);
+}
+
+.purchase-image {
+    vertical-align: middle;
+    width: var(--card-width);
+}
+
+.purchase-description-container {
+    padding-bottom: var(--card-description-button-gap);
+    font-family: var(--card-description-font-family);
+    font-size: var(--card-description-font-size);
+}
+
+.purchase-textarea {
+    font-family: 'Techno_Big';
+    font-size: 25px;
+    width: 100%;
+    resize: none;
+    display: block;
+    box-sizing: border-box;
+}
+
+.purchase-button {
+    padding: var(--item-button-padding);
+    background-color: var(--card-color-primary);
+    color: var(--card-font-color);
+    font-family: var(--card-button-font-family);
+    font-size: var(--card-button-font-size);
+    width: calc(var(--card-width) * 2 + var(--card-padding) * 2);
+    text-align: center;
+    border: none;
+    border: solid 2px var(--card-button-background-color);
+}
+
+.purchase-button:hover {
+    color: var(--card-button-background-color);
+    background-color: var(--card-button-color-hover);
+}
+
+.purchase-button:active {
+    background-color: var(--card-button-color-active)
+}
+
+.purchase-table-container {
+    margin-top: var(--purchase-table-margin-top);
+    margin-bottom: var(--purchase-table-margin-bottom);
+    display: flex;
+    justify-content: center;
+}
+
+th {
+    background-color: var(--purchase-table-heading-background-color);
+    color: var(--purchase-table-heading-font-color);
+}
+
+tr:nth-child(even) {
+    background-color: var(--purchase-table-row-even-background-color);
+    color: var(--purchase-table-row-even-font-color);
+}
+
+tr:nth-child(odd) {
+    background-color: var(--purchase-table-row-odd-background-color);
+    color: var(--purchase-table-row-odd-font-color);
+}
+
+th,
+td {
+    padding-left: var(--purchase-table-item-padding);
+    padding-right: var(--purchase-table-item-padding);
+    text-align: center;
+}
+
+table,
+th,
+td {
+    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: none;
+}
+
+table {
+    border: var(--purchase-table-border);
+}
+
+.token-container {
+    margin-bottom: var(--token-container-margin-bottom);
+}
+
+.token-form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.token {
+    font-family: var(--token-input-font-family);
+    font-size: var(--token-input-font-size);
+    color: var(--token-input-font-color);
+    background-color: var(--token-input-color);
+    outline: none;
+    text-decoration: none !important;
+    width: var(--token-input-width);
+    text-align: center;
+    border: var(--token-border);
+}
+

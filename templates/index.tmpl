@@ -1,0 +1,46 @@
+{{ template "header" . }}
+{{ if .error }}
+<div class="error-container">
+    {{ .error }}
+</div>
+{{ end }}
+{{ if .info }}
+<div class="info-container">
+    {{ .info }}
+</div>
+{{ end }}
+<div class="token-container">
+    <form class="token-form" id="token-form" action="/token" method="post">
+        <input class="token" id="token" name="token" Stype="text" placeholder="Enter Launch Code...">
+        <button class="token-button hidden" type="submit" form="token-form">
+            Submit Token
+        </button>
+    </form>
+</div>
+<div class="item-container">
+    {{ range .items }}
+    {{ if ne .Name "CIA COMMANDS (admin)"}}
+    <div class="item-card">
+        <div>
+            <div class="item-name">
+                {{ .Name }}
+            </div>
+            <div class="item-image-container">
+                <img class="item-image" src="{{ .Image }}">
+            </div>
+            <div class="item-description-container">
+                {{ .Description }}
+            </div>
+        </div>
+        <div class="item-button-container">
+            <a href="/purchase?item={{ .Name }}">
+                <button class="item-button" id="{{ .Name }}">
+                    {{ .Price }} POINTS
+                </button>
+            </a>
+        </div>
+    </div>
+    {{ end }}
+    {{ end }}
+</div>
+{{ template "footer" . }}

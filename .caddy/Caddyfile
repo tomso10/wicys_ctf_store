@@ -1,0 +1,3 @@
+store.irsec.club
+
+reverse_proxy http://store

@@ -1,0 +1,46 @@
+{{ define "navbar-item" }}
+<div class="navbar">
+    <div class="navbar-left">
+        <div>
+            Balance: {{ .user.Balance }} POINTS
+        </div>
+    </div>
+    <div class="navbar-center">
+        {{ if .navbar_link }}
+            <a href="{{ .navbar_link }}">
+                <div>
+                    {{ .user.Username }}
+                </div>
+            </a>
+        {{ else }}
+            <a href="/">
+                <div>
+                    {{ .user.Username }}
+                </div>
+            </a>
+        {{ end }}
+    </div>
+    <div class="navbar-right">
+        <div id="signin">
+            {{ if eq .user.Username "" }}
+            <a href="/login">
+                Log In
+            </a>
+            {{ else }}
+            <a href="/logout">
+                Sign Out
+            </a>
+            {{ end }}
+        </div>
+    </div>
+</div>
+{{ end }}
+
+{{ define "navbar" }}
+<div class="navbar-container sticky">
+    {{ template "navbar-item" . }}
+</div>
+<div class="navbar-container">
+    {{ template "navbar-item" . }}
+</div>  
+{{ end }}

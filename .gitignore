@@ -1,0 +1,6 @@
+**/*.sqlite
+build/*
+./caddy/config
+./caddy/data
+databases/config.yml
+databases/config.yml

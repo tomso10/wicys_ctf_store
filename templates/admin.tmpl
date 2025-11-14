@@ -1,0 +1,119 @@
+{{ template "header" . }}
+
+{{ if .error }}
+<div class="error-container">
+    {{ .error }}
+</div>
+{{ end }}
+
+<form action="/admin" method="post" id="admin-form">
+    <fieldset required name="account">
+        <div class="accounts-container">
+            <ul class="account-item-container">
+                {{ range .admin_info.Users }}
+                <div class="account-item-card-container">
+                    <li>
+                        <div class="account-item-card">
+                            <input class="click hidden" type="radio" value="{{ .Username }}" name="account">
+                            <div class="account-item-card-username">
+                                {{ .Username }}
+                            </div>
+                            <div class="account-item-card-team">
+                                {{ .Permissions }} team
+                            </div>
+                            <div class="account-item-card-balance">
+                                {{ .Balance }}
+                            </div>
+                            <div class="account-item-card-currency">
+                                POINTS
+                            </div>
+                        </div>
+                    </li>
+                </div>
+                {{ end }}
+            </ul>
+        </div>
+    </fieldset>
+
+    <fieldset required name="function">
+        <div class="accounts-container">
+            <ul class="account-item-container">
+                {{ range .admin_info.Functions }}
+                <div class="account-item-card-container">
+                    <li>
+                        <div class="function-item-card">
+                            <input class="click hidden" type="radio" value="{{ .ID }}" name="function">
+                            <div class="function-item-card-name">
+                                {{ .Name }}
+                            </div>
+                        </div>
+                    </li>
+                </div>
+                {{ end }}
+            </ul>
+        </div>
+    </fieldset>
+    <div class="account-input-fields">
+        <div class="account-input-text-box">
+            <div class="account-input-container">
+                <input class="input" type="number" min=0 id="amount" name="amount" autocomplete="off" placeholder="Enter Amount" required>
+            </div>
+        </div>
+        <div class="account-input-submit">
+            <input class="form-button" type="submit" value="SUBMIT">
+        </div>
+    </div>
+</form>
+
+<div class="purchase-table-container">
+    <table>
+        <tr>
+            <th>Username</th>
+            <th>Item</th>
+            <th>Time</th>
+            <th>Instructions</th>
+        </tr>
+        {{ range .admin_info.Purchases }}
+        <tr>
+            <td>{{ .Edges.User.Username }}</td>
+            <td>{{ .Edges.Item.Name }}</td>
+            <td>{{ .Time }}</td>
+            <td>{{ .Instructions }}</td>
+        </tr>
+        {{ end }}
+    </table>
+</div>
+
+<script>
+    var func_last = null
+    var account_last = null
+
+    function account_highlight(ctx) {
+        ctx.target.classList.toggle("account-item-card-selected")
+        ctx.target.firstElementChild.checked = true
+        if (account_last != null) {
+            account_last.classList.toggle("account-item-card-selected")
+        }
+        account_last = ctx.target
+    }
+
+    function func_highlight(ctx) {
+        ctx.target.classList.toggle("account-item-card-selected")
+        ctx.target.firstElementChild.checked = true
+        if (func_last != null) {
+            func_last.classList.toggle("account-item-card-selected")
+        }
+        func_last = ctx.target
+    }
+
+    account = document.getElementsByClassName("account-item-card")
+    func = document.getElementsByClassName("function-item-card")
+
+    for (var i = 0; i < account.length; i++) {
+        account[i].addEventListener('click', account_highlight, false);
+    }
+    for (var i = 0; i < account.length; i++) {
+        func[i].addEventListener('click', func_highlight, false);
+    }
+</script>
+{{ template "footer" . }}

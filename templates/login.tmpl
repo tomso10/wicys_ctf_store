@@ -1,0 +1,49 @@
+{{ template "header" . }}
+<div class="login-container">
+    {{ if .error }}
+    <div class="error-container">
+        {{ .error }}
+    </div>
+    {{ end }}
+    <form class="login-form" action="/login" method="post" id="login">
+        <div class="login-item-container">
+            <label for="username">Username:</label>
+            <div class="login-input-container">
+                <input class="input" type="text" id="username" name="username" required>
+            </div>
+        </div>
+
+        <div class="login-item-container">
+            <label for="password">Password:</label>
+            <div class="login-input-container">
+                <input class="input" type="password" id="password" name="password" required>
+                <div class="login-icon-container">
+                    <i class="fa-solid fa-eye-slash login-icon" id="togglePassword"></i>
+                </div>
+            </div>
+        </div>
+
+        <button class="login-form-button" type="submit" form="login" value="Submit">Log In</button>
+
+    </form>
+</div>
+
+<script>
+    const icon = document.getElementById("togglePassword");
+    const password = document.getElementById("password")
+
+    icon.addEventListener("click", function () {
+        if (password.type == "password") {
+            password.type = "text"
+        } else {
+            password.type = "password"
+        }
+
+        icon.classList.toggle("fa-eye-slash")
+        icon.classList.toggle("fa-eye")
+    });
+
+
+</script>
+
+{{ template "footer" . }}

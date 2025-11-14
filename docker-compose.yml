@@ -1,0 +1,17 @@
+version: "3.9"
+services:
+  store:
+    build: 
+      context: .
+      network: host
+    volumes:
+      - ./databases/:/app/databases/
+  caddy:
+    image: caddy:alpine
+    ports:
+      - 443:443
+      - 80:80
+    volumes:
+      - ./.caddy/Caddyfile:/etc/caddy/Caddyfile
+      - ./.caddy/data:/data
+      - ./.caddy/config:/config
